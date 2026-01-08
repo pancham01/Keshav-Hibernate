@@ -6,7 +6,8 @@
 <hibernate-mapping>
 
 	<class name="com.keshav.entity.Employee">
-		<id name="id" />
+		<id name="id"><generator class="identity"/>
+		</id>
 		<property name="name" />
 		<property name="gender" />
 		<property name="salary" />
