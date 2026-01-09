@@ -3,6 +3,10 @@ package com.keshav.main;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 import com.keshav.entity.Employee;
@@ -12,10 +16,19 @@ public class EmployeeRunner {
 	public static void main(String[] args)   {
 		
 		
-		Employee emp = new Employee("Avinash", "Male", 33333);
+		Employee emp = new Employee("Renu", "FeMale", 64548);
 		
-		Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
-		SessionFactory sessionFactory = cfg.buildSessionFactory();
+//		Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
+//		SessionFactory sessionFactory = cfg.buildSessionFactory();
+//		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg1.xml").buildSessionFactory();
+		
+//		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg1.xml").build();
+//		Metadata metadata = new MetadataSources(ssr).getMetadataBuilder().build();
+//		SessionFactory sessionFactory = metadata.buildSessionFactory();
+		
+		
+		SessionFactory sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder().configure("hibernate.cfg1.xml").build()).getMetadataBuilder().build().buildSessionFactory();
+		
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		
