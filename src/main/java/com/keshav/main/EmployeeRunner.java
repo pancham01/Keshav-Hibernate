@@ -27,7 +27,9 @@ public class EmployeeRunner {
 //		SessionFactory sessionFactory = metadata.buildSessionFactory();
 		
 		
-		SessionFactory sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder().configure("hibernate.cfg1.xml").build()).getMetadataBuilder().build().buildSessionFactory();
+		SessionFactory sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder()
+				.configure("hibernate.cfg1.xml").build()).getMetadataBuilder().build()
+				.buildSessionFactory();
 		
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
