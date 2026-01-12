@@ -22,7 +22,8 @@ public class EmployeeRunner {
 //		SessionFactory sessionFactory = cfg.buildSessionFactory();
 //		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg1.xml").buildSessionFactory();
 		
-//		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg1.xml").build();
+//		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder()
+//		.configure("hibernate.cfg1.xml").build();
 //		Metadata metadata = new MetadataSources(ssr).getMetadataBuilder().build();
 //		SessionFactory sessionFactory = metadata.buildSessionFactory();
 		
@@ -34,8 +35,17 @@ public class EmployeeRunner {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		
-		session.persist(emp);;
+		
+		
+		session.persist(emp);
 		tx.commit();
+		
+		
+//		Employee employee = session.find(Employee.class, 3);
+//		System.out.println(employee);
+//		Employee employee = new Employee();
+//		session.load(employee, 15);
+//		System.out.println(employee);
 	}
 
 }
