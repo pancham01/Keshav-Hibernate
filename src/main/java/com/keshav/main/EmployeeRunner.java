@@ -9,6 +9,7 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import com.keshav.config.EmpConfiguration;
 import com.keshav.entity.Employee;
 
 public class EmployeeRunner {
@@ -18,21 +19,9 @@ public class EmployeeRunner {
 		
 		Employee emp = new Employee("Renu", "FeMale", 64548);
 		
-//		Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
-//		SessionFactory sessionFactory = cfg.buildSessionFactory();
-//		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg1.xml").buildSessionFactory();
+
 		
-//		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder()
-//		.configure("hibernate.cfg1.xml").build();
-//		Metadata metadata = new MetadataSources(ssr).getMetadataBuilder().build();
-//		SessionFactory sessionFactory = metadata.buildSessionFactory();
-		
-		
-		SessionFactory sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder()
-				.configure("hibernate.cfg1.xml").build()).getMetadataBuilder().build()
-				.buildSessionFactory();
-		
-		Session session = sessionFactory.openSession();
+		Session session =  EmpConfiguration.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
 		
 		
