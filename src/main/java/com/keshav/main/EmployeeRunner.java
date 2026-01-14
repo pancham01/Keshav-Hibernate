@@ -8,6 +8,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import com.keshav.config.EmpConfiguration;
 import com.keshav.entity.Employee;
@@ -17,24 +18,25 @@ public class EmployeeRunner {
 	public static void main(String[] args)   {
 		
 		
-		Employee emp = new Employee("Renu", "FeMale", 64548,"IND");
+		Employee emp1 = new Employee("Shivam", "FeMale", 64548,"IND");
+		Employee emp2 = new Employee("Vimla", "FeMale", 64548,"IND");
+		Employee emp3 = new Employee("Keshav", "FeMale", 64548,"IND");
 		
 
 		
 		Session session =  EmpConfiguration.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
 		
+//		session.persist(emp1);
+//		session.persist(emp2);
+//		session.persist(emp3);
+//		tx.commit();
 		
 		
-		session.persist(emp);
-		tx.commit();
+		Query<Employee> query = session.createQuery("from empp",Employee.class);
 		
+		System.out.println(query.list());
 		
-//		Employee employee = session.find(Employee.class, 3);
-//		System.out.println(employee);
-//		Employee employee = new Employee();
-//		session.load(employee, 15);
-//		System.out.println(employee);
 	}
 
 }
