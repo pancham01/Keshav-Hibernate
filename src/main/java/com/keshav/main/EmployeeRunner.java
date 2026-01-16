@@ -1,11 +1,8 @@
 package com.keshav.main;
 
-import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.MutationQuery;
-import org.hibernate.query.Query;
 
 import com.keshav.config.EmpConfiguration;
 import com.keshav.entity.Employee;

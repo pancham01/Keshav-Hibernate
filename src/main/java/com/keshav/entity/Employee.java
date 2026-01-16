@@ -18,7 +18,6 @@ public class Employee {
 	private int salary;
 	@Transient
 	private String country;
-
 	
 	
 	public Employee() {
