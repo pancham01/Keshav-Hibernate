@@ -25,13 +25,11 @@ public class EmployeeRunner {
 		MutationQuery namedQuery = session.createNamedMutationQuery("deleteEmployeeById");
 		namedQuery.setParameter("i", 16);
 		namedQuery.executeUpdate();
-
 		tx.commit();
 
 		Query query1 = session.createQuery("from empp", Employee.class);
 		List list = query1.list();
 		System.out.println(list);
-
 		session.close();
 	}
 
