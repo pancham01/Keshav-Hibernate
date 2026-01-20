@@ -21,11 +21,7 @@ public class EmpConfiguration {
 		properties.put(AvailableSettings.JAKARTA_JDBC_PASSWORD, "root");
 		properties.put(AvailableSettings.HBM2DDL_AUTO, "create");
 		properties.put(AvailableSettings.SHOW_SQL, "true");
-//		properties.put(Environment.FORMAT_SQL, "true");
-
-//		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().applySettings(properties).build();
-//		Metadata metaData = new MetadataSources(ssr).addAnnotatedClass(com.keshav.entity.Employee.class).getMetadataBuilder().build();
-//		SessionFactory sessionFactory = metaData.buildSessionFactory();
+		properties.put(Environment.FORMAT_SQL, "true");
 
 		return new MetadataSources(new StandardServiceRegistryBuilder().applySettings(properties).build())
 				.addAnnotatedClasses(com.keshav.entity.Employee.class,com.keshav.entity.Address.class)
