@@ -20,7 +20,6 @@ public class EmployeeRunner {
 		
 		Session session =  EmpConfiguration.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
-		
 		session.persist(add1);
 		session.persist(emp1);
 		tx.commit();
