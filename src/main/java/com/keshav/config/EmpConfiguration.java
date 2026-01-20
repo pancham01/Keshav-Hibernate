@@ -28,8 +28,7 @@ public class EmpConfiguration {
 //		SessionFactory sessionFactory = metaData.buildSessionFactory();
 
 		return new MetadataSources(new StandardServiceRegistryBuilder().applySettings(properties).build())
-				.addAnnotatedClass(com.keshav.entity.Employee.class)
-				.addAnnotatedClass(com.keshav.entity.Address.class)
+				.addAnnotatedClasses(com.keshav.entity.Employee.class,com.keshav.entity.Address.class)
 				.getMetadataBuilder().build().buildSessionFactory();
 
 	}
