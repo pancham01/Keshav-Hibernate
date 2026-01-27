@@ -14,9 +14,7 @@ public class Address {
 	private int hNo;
 	private String city, state;
 	
-	@OneToOne(mappedBy = "address")
-	private Employee employee;
-
+	
 	public Address() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -30,14 +28,7 @@ public class Address {
 	
 	
 
-	public Employee getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
-
+	
 	public int gethNo() {
 		return hNo;
 	}
