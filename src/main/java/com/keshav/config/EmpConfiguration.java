@@ -19,7 +19,7 @@ public class EmpConfiguration {
 		properties.put(AvailableSettings.JAKARTA_JDBC_URL, "jdbc:mysql://localhost:3306/hibernate");
 		properties.put(AvailableSettings.JAKARTA_JDBC_USER, "root");
 		properties.put(AvailableSettings.JAKARTA_JDBC_PASSWORD, "root");
-		properties.put(AvailableSettings.HBM2DDL_AUTO, "update");
+		properties.put(AvailableSettings.HBM2DDL_AUTO, "create");
 		properties.put(AvailableSettings.SHOW_SQL, "true");
 		properties.put(Environment.FORMAT_SQL, "true");
 
