@@ -22,12 +22,18 @@ public class EmployeeRunner {
 //		Address add1 = new Address();
 //		add1.setCity("Noida");
 //		add1.setState("UP");
+//		add1.setEmployee(emp1);
+//		
 //		Address add2 = new Address();
 //		add2.setCity("GZB");
 //		add2.setState("UP");
+//		add2.setEmployee(emp1);
+//
 //		Address add3 = new Address();
 //		add3.setCity("Lucknow");
 //		add3.setState("UP");
+//		add3.setEmployee(emp1);
+//
 //		
 //		
 //		ArrayList<Address> listOfAddresses = new ArrayList<>();
@@ -38,7 +44,7 @@ public class EmployeeRunner {
 //		emp1.setAddresses(listOfAddresses);
 
 		Session session = EmpConfiguration.getSessionFactory().openSession();
-//		Transaction tx = session.beginTransaction();
+		Transaction tx = session.beginTransaction();
 //		session.persist(add1);
 //		session.persist(add2);
 //		session.persist(add3);
@@ -46,10 +52,14 @@ public class EmployeeRunner {
 //		tx.commit();
 		
 		
-		Employee employee = session.find(Employee.class, 1);
-		System.out.println(employee);
-		System.out.println(employee.getAddresses());
+//		Employee employee = session.find(Employee.class, 1);
+//		System.out.println(employee);
+//		System.out.println(employee.getAddresses());
 
+		Address address = session.find(Address.class, 2);
+		System.out.println(address);
+		System.out.println(address.getEmployee());
+		
 	}
 
 }
